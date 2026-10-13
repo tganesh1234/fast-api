@@ -36,16 +36,17 @@ def create_user(user: dict):
         status_code=409, detail="user already exists"
     )
 
-@app.post("/users/update")
-def update_user(user: dict):
-    # Here you would typically add logic to update the user in a database
-    return HTTPException(
-        status_code=200, detail="user updated successfully"
-    )
 
 @app.delete("/users/delete")
 def delete_user(user_id: int):
     # Here you would typically add logic to delete the user from a database
     return HTTPException(
         status_code=200, detail="user deleted successfully"
+    )
+
+@app.patch("/users/update")
+def update_user(user_id: int, user: dict):
+    # Here you would typically add logic to update the user in a database
+    return HTTPException(
+        status_code=200, detail="user updated successfully"
     )
