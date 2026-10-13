@@ -49,3 +49,10 @@ def patch_user(user: dict):
     return HTTPException(
         status_code=200, detail="user patched successfully"
     )
+
+@app.delete("/users/delete")
+def delete_user(user_id: int):
+    # Here you would typically add logic to delete the user from a database
+    return HTTPException(
+        status_code=200, detail="user deleted successfully"
+    )
